@@ -1,0 +1,25 @@
+.reviews {
+    padding-bottom: 5rem;
+    &__container {padding-top: 5rem;}
+    &__slider {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+        &_wrapper {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1920px;
+        }
+        &_pagination {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &__card {
+        padding: 1rem;
+        background: #ededed;
+        &_review {margin-top: 1rem;}
+    }
+}

@@ -1,0 +1,30 @@
+.first-screen {
+    background-image: radial-gradient(rgba(0,0,0,0.3), $black), url(../img/dist/first-screen-banner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__container {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        height: 100%;
+    }
+    &__title,
+    &__subtitle {
+        color: $white;
+        text-align: left;
+    }
+    &__title,
+    &__btn {grid-column: 3 / 15;}
+    &__title {
+        grid-row: 1 / 2;
+        font-size: 8rem;
+        align-self: end;
+    }
+    &__subtitle {
+        margin-top: 0;
+        grid-row: 2 / 3;
+        grid-column: 3 / 10;
+        align-self: center;
+    }
+    &__btn {grid-row: 3 / 4;}
+}

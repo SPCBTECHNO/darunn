@@ -1,0 +1,251 @@
+// -------- Навигация --------- //
+// 1. Стилизация контейнера
+// 2. Стилизация шапки
+// 3. Стилизация первого экрана
+// 4. Стилизация заголовков и подзаголовков секций
+// 5. Стилизация каталога
+// 6. Стилизация блока брендирования
+// 7. Стилизация блока преимуществ
+// 8. Стилизация блока с доставкой
+// 9. Стилизация блока О нас
+// 10. Стилизация формы обратной связи
+// 11. Стилизация подвала
+// 12. Стилизация 404
+// 13. Стилизация фиксированных кнопок почты и телефона
+// 14. Стилизация слока с cookies
+// 15. Стилизация блока с описание продуктов
+// 16. Стилизация блока с отзывами
+// 17. Стилизация окна с подтверждением возраста
+// 18. Стилизация окон про отправке данных с формы обратной связи
+// ---------------------------- //
+
+@media screen and (max-width:575px) {
+    
+    // 1. Стилизация контайнера
+    .container {
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
+        width: 100%;
+        column-gap: 0.25rem;
+    }
+    // 2. Стилизация шапки
+    .header {
+        &__mail,
+        &__phone,
+        &__address,
+        &__inst {
+            grid-row: 1 / 2;
+            a:last-child {display: none;}
+        }
+        &__logo {grid-column: 2 / 7;}
+        &__address {grid-column: 9 / 10;}
+        &__phone {grid-column: 11/ 12;}
+        &__mail {grid-column: 13 / 14;}
+        &__inst {grid-column: 15 / 16;}
+        &__menu_link {font-size: 0.85rem;}
+        &__menu {display: block;}
+    }
+
+    // 3. Стилизация первого экрана
+    .first-screen {
+        &__title,
+        &__subtitle,
+        &__btn {grid-column: 1 / 17;}
+        &__title,
+        &__subtitle {text-align: center;}
+        &__title {font-size: 2.5rem;}
+        &__subtitle {font-size: 1rem;}
+        &__btn {justify-self: center;}
+    }
+
+    // 4. Стилизация заголовков и подзаголовков секций
+    .section-title {font-size: 1.75rem;}
+    .section-subtitle {font-size: 1rem;}
+
+    // 5. Стилизация каталога
+    .catalog {
+        &__subtitle {margin-bottom: 0;}
+        &__darunn-box {
+            width: 100%;
+            height: auto;
+            grid-template-columns: minmax(0.5rem, 1fr);
+            row-gap: 1rem;
+            animation: none;
+            &_img,
+            &_name,
+            &_caption {
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+            &_img {
+                width: 15.5rem;
+                height: 15.5rem;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                justify-self: center;
+                align-self: center;
+            }
+            &_name {text-align: center;}
+            &_caption {
+                grid-row: 3 / 4;
+                p {
+                    font-size: 1rem;
+                    text-align: center;
+                }
+            }
+            &_button {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        &__btn,
+        &__price-list-btn {
+            grid-column: 1 / 17;
+            justify-self: center;
+        }
+        &__btn {margin-top: 2rem;}
+    }
+
+    // 6. Стилизация блока брендирования
+    .branding {
+        &__card {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            &:nth-child(3),
+            &:nth-child(4) {
+                grid-column: 1 / 17;
+            }
+        }
+    }
+
+    // 7. Стилизация блока преимуществ
+    .advantages {
+        box-shadow: 0 0 4rem rgba(0, 0, 0, 0.25);
+        &__cards {display: block;}
+    }
+
+    // 8. Стилизация блока с доставкой
+    .delivery {
+        &__cards {
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        &__card {
+            box-shadow: none;
+            padding: 1rem;
+            width: 100%;
+            margin-bottom: 2rem;
+            &_title {margin-bottom:0.5rem;}
+            &_title, &_desc {text-align: center;}
+        }
+    }
+
+    // 9. Стилизация блока О нас
+    .about {
+        box-shadow: 0 0 4rem rgba(0, 0, 0, 0.25);
+        p:nth-child(3),
+        p:nth-child(4) {
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+    }
+
+    // 10. Стилизация формы обратной связи
+    .form {
+        &__container {
+            grid-template-rows: repeat(5, auto);
+        }
+        &__section-form {
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            &_input {
+                margin-bottom: 1rem;
+            }
+        }
+        &__required {
+            grid-column: 3 / 15;
+            text-align: center;
+        }
+        &__agreement {
+            grid-row: 5 / 6;
+            grid-column: 1 / 17;
+            text-align: center;
+        }
+    }
+
+    // 11. Стилизация подвала
+    .footer {
+        &__contacts {
+            display: block;
+            grid-column: 2 / 17;
+            &_phone,
+            &_email,
+            &_inst,
+            &_address {margin-top: 1rem;}
+            &_inst {margin-top: 0;}
+        }
+    }
+
+    // 12. Стилизация 404
+    .error-404 {&__title {font-size: 5rem;}}
+
+    // 13. Стилизация фиксированных кнопок почты и телефона
+    .button__mail {display: none;}
+    .button__phone {
+        display: block;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    // 14. Стилизация слока с cookies
+    .cookies {
+        gap: 0;
+        p {
+            grid-column: 1 / 17;
+            grid-row: 1 / 2;
+            text-align: center;
+        }
+        &__button {
+            margin-top: 1rem;
+            grid-column: 1 / 17;
+            grid-row: 2 / 3;
+            justify-self: center;
+        }
+    }
+
+    // 15. Стилизация блока с описание продуктов
+    .product-caption {&__slider {display: block;}}
+
+    // 16. Стилизация блока с отзывами
+    .reviews__slider {display: block;}
+
+    // 17. Стилизация окна с подтверждением возраста
+    .popup {
+        &__window {
+            width: 95%;
+            p {
+                font-size: 0.75rem;
+                &:nth-child(6) {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+
+    // 18. Стилизация окон про отправке данных с формы обратной связи
+    .popup-form {
+        &__container {
+            padding: 1rem;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+        &__close {
+            text-align: center;
+        }
+        &__title {font-size: 1rem !important;}
+    }
+
+}

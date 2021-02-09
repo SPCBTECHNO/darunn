@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {font-size: 14px;}
+
+body {
+    font-family: $text;
+    color: $grey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {font-family: $heading;}
+
+h1 {font-size: 5.14rem;}
+h2 {font-size: 3.42rem;}
+h3 {font-size: 1.71rem;}
+h4 {font-size: 1.5rem;}
+h5 {font-size: 1.28rem;}
+h6 {font-size: 1.14rem;}
+
+button:focus {outline: none;}
+
+.wrapper {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    max-width: 1920px;
+    height: auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(16, minmax(0.5rem, 1fr));
+    column-gap: 3rem;
+}
+
+.button {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: $red;
+    width: 242px;
+    height: 64px;
+    border-radius: 32px;
+    text-align: center;
+    line-height: 64px;
+    transition: 0.3s;
+    border: none;
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+}
+
+.section-title {
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    grid-column-start: 1;
+    grid-column-end: 17;
+}
+
+.section-subtitle {
+    font-family: $text;
+    font-weight: 400;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 17;
+    margin-top: 0.75rem;
+    span {
+        text-transform: uppercase;
+        color: $red;
+    }
+}
+
+
+.line {
+    @extend %gradient;
+    width: 100%;
+    height: 1rem;
+}
+
+.button__mail,
+.button__phone {
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    z-index: 99;
+    right: 3rem;
+    bottom: 3rem;
+    &_img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        img,
+        &::before,
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::before,
+        &::after {
+            content: '';
+            border-radius: 50%;     
+            background: $red;
+            opacity: 0.5;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            z-index: 3;
+        }
+        &::before {
+            width: 4.5rem;
+            height: 4.5rem;
+            z-index: 2;
+            
+        }
+        &::after {
+            width: 5rem;
+            height: 5rem;
+            z-index: 1;
+        }
+    }
+}
+.button__phone {display: none;}
+
+.popup {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba($black, 0.95);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__window {
+        display: flex;
+        padding: 3rem;
+        width: 50%;
+        max-width: 960px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        background: $white;
+        border-radius: 1rem;
+        &_buttons {display: grid;}
+        &_button {
+            width: 8rem;
+            height: 4rem;
+            color: $red;
+            font-size: 2rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            border: 1px solid $red;
+            text-align: center;
+            line-height: 4rem;
+            transition: 0.3s ease-in-out;
+            margin-bottom: 1rem;
+            background: none;
+            &:hover {
+                background: $red;
+                color: $white;
+                cursor: pointer;
+            }
+            &-yes {
+                grid-column: 1 / 2;
+                justify-self: right;
+                margin-right: 0.5rem;
+            }
+            &-no {
+                margin-left: 0.5rem;
+                grid-column: 2 / 3;
+            }
+        }
+        p {
+            text-align: center;
+            &:nth-child(3) {
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                font-size: 2rem;
+            }
+            &:nth-child(6) {
+                margin-bottom: 2rem;
+            }
+            &:last-child {
+                margin-top: 0.5rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.popup-form {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba($black, 0.95);
+    z-index: 9999;
+    &__close {
+        margin-bottom: 2rem;
+        display: block;
+        text-align: right;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            color: $red;
+            cursor: pointer;
+        }
+    }
+    &__container {
+        padding: 3rem;
+        background: $white;
+        border-radius: 0.5rem;
+    }
+    &__form {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        display: grid;
+        row-gap: 1rem;
+        justify-content: center;
+        &_input {
+            box-shadow: inset 0 0 0.25rem rgba($black, 0.3);
+        }
+    }
+    &__required {
+        margin-bottom: 2rem;
+        display: block;
+        text-align: center;
+    }
+}
+
+.form-action {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background: rgba($black, 0.95);
+    &__success,
+    &__unsuccess {
+        padding: 3rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background: $white;
+        border-radius: 0.5rem;
+    }
+    &__subtitle {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+
+.cookies {
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 990;
+    background: $white;
+    @extend %shadow;
+    p {
+        grid-column: 1 / 12;
+        align-self: center;
+    }
+    &__button {
+        grid-column: 12 / 17;
+        justify-self: right;
+        align-self: center;
+    }
+}

@@ -1,0 +1,44 @@
+.form {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    @extend %gradient;
+    &__title,
+    &__subtitle {color: $white;}
+    &__title {grid-row: 1 / 2;}
+    &__subtitle {grid-row: 2 / 3;}
+    &__section-form {
+        margin-top: 4rem;
+        grid-row: 3 / 4;
+        grid-column: 3 / 15;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &_input {
+            font-size: 1rem;
+            padding: 0.5rem;
+            width: 19.5rem;
+            height: 4rem;
+            border: none;
+            border-radius: 0.5rem;
+        }
+        &_button {
+            border: none;
+            width: 19.5rem;
+        }
+    }
+    &__required,
+    &__agreement {
+        margin-top: 1rem;
+        grid-row: 4 / 5;
+        color: $white;
+
+    }
+    &__required {
+        grid-column: 3 / 6;
+    }
+    &__agreement {
+        grid-column: 12 / 15;
+        text-align: center;
+        a {color: $white;}
+    }
+}

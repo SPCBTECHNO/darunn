@@ -1,0 +1,13 @@
+.policy-content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &__title,
+    p {
+        grid-column: 1 / 17;
+    }
+    &__title {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+}

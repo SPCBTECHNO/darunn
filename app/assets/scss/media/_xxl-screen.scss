@@ -1,0 +1,69 @@
+// -------- Навигация --------- //
+// 1. Стилизация контейнера
+// 2. Стилизация шапки
+// 3. Стилизация первого экрана
+// 4. Стилизация каталога
+// 5. Стилизация блока с описание продуктов
+// 6. Стилизация формы обратной связи
+// 7. Стилизация блока с преимуществами
+// 8. Стилизация блока с отзывами
+// ---------------------------- //
+
+@media screen and (min-width: 1400px) and (max-width: 1700px) {
+
+    // 1. Стилизация контейнера
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 1320px;
+        column-gap: 2.5rem;
+    }
+
+    // 2. Стилизация шапки
+    .header {
+        &__address a,
+        &__mail a,
+        &__phone a,
+        &__inst a {font-size: 1rem;}
+        &__menu {display: block;}
+    }
+
+    // 3. Стилизация первого экрана
+    .first-screen {
+        &__title,
+        &__btn {grid-column: 2 / 17;}
+        &__title {font-size: 5rem;}
+        &__subtitle {grid-column: 2 / 11;}
+    }
+
+    // 4. Стилизация каталога
+    .catalog {
+        &__darunn-box {
+            width: 40rem;
+            height: 19.5rem;
+            grid-template-columns: auto 15rem;
+            &_caption p {font-size: 1.15rem;}
+        }
+    }
+
+    // 5. Стилизация блока с описание продуктов
+    .product-caption {&__slider {display: block;}}
+
+    // 6. Стилизация формы обратной связи
+    .form {
+        &__section-form {
+            &_input {
+                width: 14rem;
+            }
+            &_button {
+                width: 14rem;
+            }
+        }
+    }
+
+    // 7. Стилизация блока с преимуществами
+    .advantages {&__cards {display: block;}}
+
+    // 8. Стилизация блока с отзывами
+    .reviews__slider {display: block;}
+}

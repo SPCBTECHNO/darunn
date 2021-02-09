@@ -1,0 +1,14 @@
+// -------- Навигация --------- //
+// 1. Стилизация контейнера
+// ---------------------------- //
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+    // 1. Стилизация контейнера
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+        width: 540px;
+        column-gap: 0.5rem;
+    }
+}

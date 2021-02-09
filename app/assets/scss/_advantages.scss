@@ -1,0 +1,52 @@
+.advantages {
+    padding-bottom: 5rem;
+    &__container {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+    }
+    &__cards {
+        display: flex;
+        justify-content: center;
+        &_wrapper {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1920px;
+        }
+        &_pagination {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &__card {
+        margin-bottom: 1rem;
+        width: 27.25rem;
+        &:first-child .advantages__card_img {background-image: url(../img/icons/eko.png);}
+        &:nth-child(2) .advantages__card_img {background-image: url(../img/icons/sample.png);}
+        &:last-child .advantages__card_img {background-image: url(../img/icons/design.png);}
+        &_img {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
+            width: 12.38rem;
+            height: 12.38rem;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+        }
+        &_tag {
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        &_title {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        &_caption {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            text-align: center;
+        }
+    }
+}
