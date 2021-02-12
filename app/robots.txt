@@ -1,3 +1,7 @@
 User-agent: *
 Sitemap: /sitemap.xml
 Allow: /assets/img/dist/
+Disallow: /?form=yes
+Disallow: /?form-action=yes
+Disallow: /?form-action=no
+Disallow: /assets/components/data.php
