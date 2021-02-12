@@ -14,7 +14,7 @@ sass.compiler = require('node-sass');
 
 function browsersync() {
     browserSync.init({
-        proxy: 'darunn.dev',
+        proxy: 'darunn',
         // server: { baseDir: 'app/' },
         notify: false,
         online: true /* Включение и отключение режима работы по сети */
